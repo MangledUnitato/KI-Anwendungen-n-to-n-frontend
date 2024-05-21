@@ -116,12 +116,12 @@
 	function handleSubmit() {
 		let url =
             PUBLIC_BASE_URL +
-            "/api/prediction/apartment?bfs_number=" +
-            selected.id +
+            "/api/predict/?rooms=" +
+            rooms +
             "&area=" +
             area +
-            "&rooms=" +
-            rooms;
+            "&bfs_number=" +
+            selected.id;
         console.log(url);
         axios.get(url).then((response) => {
             price = 'CHF ' + response.data;
